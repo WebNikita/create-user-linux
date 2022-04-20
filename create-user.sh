@@ -1,9 +1,9 @@
 #!/bin/bash
-user_name = ""
-password = ""
+user_name="test_user"
+password="12345"
 servers=(
-    "",
-    "",
+    "192.168.4.145"
 )
 
-useradd -p $password -s /bin/bash $user_name
+useradd -G sudo -s /bin/bash $user_name
+echo -e "$password\n$password" | passwd -q $user_name 
